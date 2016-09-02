@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Rails Noticeboard</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+
+    <footer class="footer" style="background-color: #a9d6cd">
+      <div class="container">
+        <p class="text-muted text-xs-right">copyright &#169; 2016 h.s</p>
+      </div>
+    </footer>
+  </body>
+
+</html>
