@@ -20,10 +20,8 @@
 <div class="card">
   <h4 class="card-header">Boards Search</h4>
   <div class="card-block">
-    <form>
-      Title&nbsp;:&nbsp;<input id="search_title" class="form-control" style="width: 35rem;display: inline;margin-right: 1rem" type="text" >
-      <button type="button" class="btn btn-outline-primary" onclick='onsearch()' >Search</button>
-    </form>
+    Title&nbsp;:&nbsp;<input id="search_title" class="form-control" style="width: 35rem;display: inline;margin-right: 1rem" type="text" >
+     <button type="button" class="btn btn-outline-primary" onclick='onsearch()' >Search</button>
   </div>
 </div>
 
@@ -58,13 +56,12 @@
 <%= link_to 'New Board', new_board_path %>
 <br><br>
 
-<!-- javascript -->
 <script type="text/javascript">
 
-  // search board by input title
+  /** search boards **/
   function onsearch() {
-    var search_title = $('#search_title').val();
-    alert(search_title);
-  }
+    var search_title = $("#search_title").val();
 
+    $.get("boards/search/" + search_title);
+  }
 </script>

@@ -2,13 +2,11 @@ class BoardsController < ApplicationController
   before_action :set_board, only: [:show, :edit, :update, :destroy]
 
   # GET /boards
-  # GET /boards.json
   def index
     @boards = Board.all
   end
 
   # GET /boards/1
-  # GET /boards/1.json
   def show
   end
 
@@ -21,8 +19,23 @@ class BoardsController < ApplicationController
   def edit
   end
 
+  # GET /boards/search
+  def search
+
+    # get boards by title.
+    target_boards = Board.get_by_title(params[:search_title])
+
+    # set display boards
+    if target_boards.present?
+      @board = Board.all
+    else
+      @board = target_boards
+    end
+
+    render :index
+  end
+
   # POST /boards
-  # POST /boards.json
   def create
     @board = Board.new(board_params)
 
@@ -34,7 +47,6 @@ class BoardsController < ApplicationController
   end
 
   # PATCH/PUT /boards/1
-  # PATCH/PUT /boards/1.json
   def update
     if @board.update(board_params)
       redirect_to @board, notice: 'Board was successfully updated.'
@@ -44,7 +56,6 @@ class BoardsController < ApplicationController
   end
 
   # DELETE /boards/1
-  # DELETE /boards/1.json
   def destroy
     @board.destroy
     respond_to do |format|
