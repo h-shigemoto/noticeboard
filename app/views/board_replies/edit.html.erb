@@ -1,6 +1,5 @@
 <h1>Editing Board Reply</h1>
 
-<%= render 'form', board_reply: @board_reply %>
+<%= render 'form', board_reply: @board_reply, action: 'update' %>
 
-<%= link_to 'Show', @board_reply %> |
-<%= link_to 'Back', board_replies_path %>
+<%= link_to 'Back', board_path %>

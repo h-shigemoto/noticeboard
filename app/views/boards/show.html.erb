@@ -47,6 +47,7 @@
 <!-- input reply -->
 <div class="card">
   <h4 class="card-header">Reply</h4>
+  <%= render 'board_replies/form', board_reply: @board_reply, action: 'create' %>
 </div>
 
 <%= link_to 'Edit', edit_board_path(@board) %>&nbsp;&nbsp;<%= link_to 'Back', boards_path %>

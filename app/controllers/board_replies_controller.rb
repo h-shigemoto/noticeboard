@@ -6,7 +6,6 @@ class BoardRepliesController < ApplicationController
   end
 
   # POST /board_replies
-  # POST /board_replies.json
   def create
     @board_reply = BoardReply.new(board_reply_params)
 
@@ -18,7 +17,6 @@ class BoardRepliesController < ApplicationController
   end
 
   # PATCH/PUT /board_replies/1
-  # PATCH/PUT /board_replies/1.json
   def update
     if @board_reply.update(board_reply_params)
       redirect_to @board_reply, notice: 'Board reply was successfully updated.'
@@ -28,7 +26,6 @@ class BoardRepliesController < ApplicationController
   end
 
   # DELETE /board_replies/1
-  # DELETE /board_replies/1.json
   def destroy
     @board_reply.destroy
     redirect_to board_replies_url, notice: 'Board reply was successfully destroyed.'
@@ -43,7 +40,7 @@ class BoardRepliesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def board_reply_params
       reply_params = params.require(:board_reply).permit(:name, :content)
-      reply_params[:rep_no] = BoardReply.get_max_rep_no
+      reply_params[:rep_no] = BoardReply.get_max_rep_no(@board_reply.board_id)
       reply_params
     end
 end

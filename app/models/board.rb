@@ -5,10 +5,7 @@ class Board < ApplicationRecord
   # search boards by title
   # @param [String] title search target title
   # @return [Board] search result
-  def get_by_title(title)
-
-    return nil if title.present?
-
-    Board.where("title like '%#{title}%'")
+  def self.get_by_title(title)
+    Board.where("title like ?", "%#{title}%")
   end
 end

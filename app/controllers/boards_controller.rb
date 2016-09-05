@@ -3,11 +3,19 @@ class BoardsController < ApplicationController
 
   # GET /boards
   def index
-    @boards = Board.all
+
+    if params[:search_title].present?
+      @search_title = params[:search_title]
+      @boards = Board.get_by_title(@search_title)
+    else
+      @search_title = nil
+      @boards = Board.all
+    end
   end
 
   # GET /boards/1
   def show
+    @board_reply = BoardReply.new
   end
 
   # GET /boards/new
@@ -17,22 +25,6 @@ class BoardsController < ApplicationController
 
   # GET /boards/1/edit
   def edit
-  end
-
-  # GET /boards/search
-  def search
-
-    # get boards by title.
-    target_boards = Board.get_by_title(params[:search_title])
-
-    # set display boards
-    if target_boards.present?
-      @board = Board.all
-    else
-      @board = target_boards
-    end
-
-    render :index
   end
 
   # POST /boards
