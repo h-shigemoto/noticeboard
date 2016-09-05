@@ -1,5 +1,9 @@
-<h1>Editing Board Reply</h1>
+<h1>Editing [&nbsp;<%= @board.title %>&nbsp;] Reply</h1>
+
+<br>
 
 <%= render 'form', board_reply: @board_reply, action: 'update' %>
 
-<%= link_to 'Back', board_path %>
+<br>
+
+[&nbsp;<%= link_to 'Back', board_path(@board) %>&nbsp;]

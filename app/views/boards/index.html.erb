@@ -9,7 +9,7 @@
   <h4 class="card-header">Boards Links</h4>
   <div class="card-block" style="max-height: 20rem">
     <% @boards.each do |board| %>
-      &nbsp;<%= link_to "[#{board.title}]", board %>
+      &nbsp;[&nbsp;<%= link_to "#{board.title}", board %>&nbsp;]
     <% end %>
   </div>
 </div>
@@ -42,9 +42,9 @@
           <td colspan="3"><%= board.content %></td>
         </tr>
         <tr>
-          <td><%= link_to 'Detail', board %></td>
-          <td><%= link_to 'Edit', edit_board_path(board) %></td>
-          <td><%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>[&nbsp;<%= link_to 'Detail', board %>&nbsp;]</td>
+          <td>[&nbsp;<%= link_to 'Edit', edit_board_path(board) %>&nbsp;]</td>
+          <td>[&nbsp;<%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;]</td>
         </tr>
       </table>
     <% end %>
@@ -53,7 +53,7 @@
 
 <br>
 
-<%= link_to 'New Board', new_board_path %>
+[&nbsp;<%= link_to 'Create New Board', new_board_path %>&nbsp;]
 <br><br>
 
 <!-- search form -->

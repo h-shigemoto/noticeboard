@@ -2,9 +2,12 @@
 
 <h1><%= @board.title %></h1>
 
+<br>
+
 <!-- board details -->
 <div class="card">
   <h4 class="card-header">Board Details</h4>
+  <div class="card-block">
     <table class="table table-striped table-bordered">
       <tr>
         <td><b><%= @board.title %></b></td>
@@ -15,6 +18,7 @@
         <td colspan="3"><%= @board.content %></td>
       </tr>
     </table>
+  </div>
 </div>
 
 <br>
@@ -34,8 +38,8 @@
           <td colspan="3"><%= reply.content %></td>
         </tr>
         <tr>
-          <td><%= link_to 'Edit', edit_board_board_reply_path(@board, reply) %></td>
-          <td colspan="2"><%= link_to 'Destroy', board_board_reply_path(@board, reply), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>[&nbsp;<%= link_to 'Edit', edit_board_board_reply_path(@board, reply) %>&nbsp;]</td>
+          <td colspan="2">[&nbsp;<%= link_to 'Destroy', board_board_reply_path(@board, reply), method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;]</td>
         </tr>
       </table>
     <% end %>
@@ -46,9 +50,11 @@
 
 <!-- input reply -->
 <div class="card">
-  <h4 class="card-header">Reply</h4>
-  <%= render 'board_replies/form', board_reply: @board_reply, action: 'create' %>
+  <h4 class="card-header">New Reply</h4>
+  <div class="card-block">
+    <%= render 'board_replies/form', board_reply: @board_reply, action: 'create' %>
+  </div>
 </div>
 
-<%= link_to 'Edit', edit_board_path(@board) %>&nbsp;&nbsp;<%= link_to 'Back', boards_path %>
+[&nbsp;<%= link_to 'Edit', edit_board_path(@board) %>&nbsp;]&nbsp;&nbsp;[&nbsp;<%= link_to 'Back', boards_path %>&nbsp;]
 <br><br>

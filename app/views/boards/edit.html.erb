@@ -1,6 +1,9 @@
-<h1>Editing Board</h1>
+<h1>Editing [&nbsp;<%= @board.title %>&nbsp;] Board</h1>
+
+<br>
 
 <%= render 'form', board: @board %>
 
-<%= link_to 'Show', @board %> |
-<%= link_to 'Back', boards_path %>
+<br>
+
+[&nbsp;<%= link_to 'Show', @board %>&nbsp;]&nbsp;&nbsp;[&nbsp;<%= link_to 'Back', boards_path %>&nbsp;]

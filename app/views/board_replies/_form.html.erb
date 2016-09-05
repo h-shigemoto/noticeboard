@@ -13,15 +13,19 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
+
+  <br>
 
   <div class="field">
     <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, class: "form-control" %>
   </div>
 
+  <br>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-outline-primary" %>
   </div>
 <% end %>

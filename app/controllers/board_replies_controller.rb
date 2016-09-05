@@ -3,6 +3,7 @@ class BoardRepliesController < ApplicationController
 
   # GET /board_replies/1/edit
   def edit
+    @board = @board_reply.board
   end
 
   # POST /board_replies
@@ -10,16 +11,16 @@ class BoardRepliesController < ApplicationController
     @board_reply = BoardReply.new(board_reply_params)
 
     if @board_reply.save
-      redirect_to @board_reply, notice: 'Board reply was successfully created.'
+      redirect_to @board, notice: 'Board reply was successfully created.'
     else
-      render :new
+      redirect_to @board
     end
   end
 
   # PATCH/PUT /board_replies/1
   def update
     if @board_reply.update(board_reply_params)
-      redirect_to @board_reply, notice: 'Board reply was successfully updated.'
+      redirect_to @board, notice: 'Board reply was successfully updated.'
     else
       render :edit
     end
