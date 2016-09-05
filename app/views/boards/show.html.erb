@@ -52,7 +52,7 @@
 <div class="card">
   <h4 class="card-header">New Reply</h4>
   <div class="card-block">
-    <%= render 'board_replies/form', board_reply: @board_reply, action: 'create' %>
+    <%= render 'board_replies/form', board_reply: @board_reply, url: board_board_replies_path(@board) %>
   </div>
 </div>
 

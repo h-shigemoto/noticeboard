@@ -50,9 +50,7 @@ class BoardsController < ApplicationController
   # DELETE /boards/1
   def destroy
     @board.destroy
-    respond_to do |format|
-      redirect_to boards_url, notice: 'Board was successfully destroyed.'
-    end
+    redirect_to boards_url, notice: 'Board was successfully destroyed.'
   end
 
   private

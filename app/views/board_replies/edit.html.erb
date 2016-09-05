@@ -2,8 +2,9 @@
 
 <br>
 
-<%= render 'form', board_reply: @board_reply, action: 'update' %>
+<%= render 'form', board_reply: @board_reply, url: board_board_reply_path(@board, @board_reply) %>
 
 <br>
 
 [&nbsp;<%= link_to 'Back', board_path(@board) %>&nbsp;]
+<br><br>
