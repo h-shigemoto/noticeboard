@@ -16,10 +16,6 @@ First, clone this repository(https://github.com/h-shigemoto/noticeboard). Second
 
 `rails db:migrate`
 
-## Database initialization
-
-`rails db:migrate:reset`
-
 ## Sampledata creation
 
 `rails sampledata:generate`

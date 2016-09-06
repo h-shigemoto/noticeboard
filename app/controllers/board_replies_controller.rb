@@ -14,7 +14,7 @@ class BoardRepliesController < ApplicationController
     if @board_reply.save
       redirect_to @board_reply.board, notice: 'Board reply was successfully created.'
     else
-      redirect_to controller: 'boards', action: 'show', id: params[:board_id]
+      redirect_to @board_reply.board
     end
   end
 

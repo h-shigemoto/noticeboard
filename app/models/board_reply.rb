@@ -2,6 +2,9 @@ class BoardReply < ApplicationRecord
 
   belongs_to :board
 
+  validates :name, presence: true, length: {maximum: 50}
+  validates :content, length: {maximum: 200}, if: "content.present?"
+
   # get max reply no.
   # @param [integer] board_id parent board id
   # @return [integer] reply no

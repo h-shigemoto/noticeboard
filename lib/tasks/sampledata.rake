@@ -28,7 +28,6 @@ namespace :sampledata do
   desc "delete sample board and reply data."
   task :delete => :environment do
 
-    destroy_ids = SAMPLE_BOARDS.map { |board| board[:id] }
-    Board.destroy(destroy_ids)
+    Board.destroy_all('id < 0')
   end
 end
