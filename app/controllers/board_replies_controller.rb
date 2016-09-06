@@ -14,7 +14,7 @@ class BoardRepliesController < ApplicationController
     if @board_reply.save
       redirect_to @board_reply.board, notice: 'Board reply was successfully created.'
     else
-      redirect_to @board_reply.board
+      redirect_to @board_reply.board, alert: @board_reply.errors.full_messages
     end
   end
 

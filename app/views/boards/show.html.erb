@@ -1,4 +1,13 @@
 <p id="notice"><%= notice %></p>
+<% if alert.present? %>
+  <div id="error_explanation">
+    <ul>
+    <% alert.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <h1><%= @board.title %></h1>
 

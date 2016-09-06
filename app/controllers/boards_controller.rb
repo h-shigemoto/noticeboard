@@ -15,7 +15,7 @@ class BoardsController < ApplicationController
 
   # GET /boards/1
   def show
-    @board_reply = BoardReply.new unless
+    @board_reply = BoardReply.new
   end
 
   # GET /boards/new
