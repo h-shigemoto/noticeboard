@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><span class="tag tag-success"><%= notice %></span></p>
 <% if alert.present? %>
   <div id="error_explanation">
     <ul>
     <% alert.each do |message| %>
-      <li><%= message %></li>
+      <li><span class="tag tag-danger"><%= message %></span></li>
     <% end %>
     </ul>
   </div>
