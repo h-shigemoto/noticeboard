@@ -2,7 +2,7 @@
 
 This source is simple noticeboard by RubyOnRails5, SQLite3, Bootstrap4. You can use to easy.
 
-First, clone this repository(https://github.com/h-shigemoto/noticeboard). Second, you should make DB, type `rails db:migrate` command. Last, you type `rails server` command and access http://localhost:3000.
+First, clone this repository(https://github.com/koyupi/noticeboard). Second, you should make DB, type `rails db:migrate` command. Last, you type `rails server` command and access http://localhost:3000.
 
 ## Ruby version
 
